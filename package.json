@@ -1,0 +1,14 @@
+{
+  "name": "04---nodejs---express-mongoose",
+  "version": "0.0.1",
+  "description": "Servidor Ecommerce en NodeJS, Express, Mpngoose, JWT, con CRUD de Users,productos, ordenes.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "jose",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
