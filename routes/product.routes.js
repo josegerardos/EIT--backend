@@ -5,6 +5,10 @@ const productController = require('./../controllers/product.controller')
 router.get("/products", productController.getAllProducts)
 
 // eliminar producto :
-router.delete("/products", productController.deleteProduct)
+router.delete("/product/:id", productController.deleteProduct)
+
+// añadir producto:
+ router.post("/product", productController.addProduct)
+
 
 module.exports = router
