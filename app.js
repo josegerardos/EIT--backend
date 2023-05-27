@@ -1,24 +1,20 @@
 const express = require('express');
 const app = express();
 const productRoutes = require('./routes/product.routes');
+const userRoutes = require('./routes/user.routes');
+const cors = require('cors');
 
 // middlewares:
-app.use(express.json()); 
+app.use(express.json());
+app.use(cors());
 app.use(express.urlencoded({
-    extended:true
+extended:true
 }));
 
 
-app.get('/', (request, response) =>{
-    response.send({
-    msg:'bienvenido a mi servidor espress',
-    ok: true
-        });
-});
-
 // definir rutas a usar por mi app express :
-app.use(productRoutes);
+app.use('/api', [ productRoutes, userRoutes ]);
 
 
 
-module.exports = app
+module.exports = app;

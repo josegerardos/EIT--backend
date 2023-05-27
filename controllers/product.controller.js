@@ -2,12 +2,13 @@ const product = require('./../schemas/product.schema')
 
 const getAllProducts = (req, res) => {
     product.find().then(function(productos){
-    res.status(200).send({
+    return res.status(200).send({
     msg:'productos obtenidos correctamente',
     productos: productos
-    }).catch((error)=>{
-    console.log(error);
     })
+}).catch(error => {
+    console.log(error);
+    return res.status.send('No se pudieron obtener los productos')
     })
 };
 
@@ -22,7 +23,7 @@ function addProduct(req, res) {
 });
 }).catch(error =>{
     console.log(error);
-    res.status(500).send('El producto no se pudo guardar');
+    return res.status(500).send('El producto no se pudo guardar');
 });
 };
 
