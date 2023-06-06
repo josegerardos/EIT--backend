@@ -20,10 +20,10 @@ extended:true
 app.use(express.static("public"));
 
 // Middleware para registrar las rutas consultadas
-app.use((req, res, next) => {
-    console.log(`${req.method} ${req.url}`);
-    next();
-  });
+// app.use((req, res, next) => {
+//     console.log(`${req.method} ${req.url}`);
+//     next();
+//   });
 // todo :definir rutas a usar por mi app express :
 app.use(viewsRoutes);
 app.use('/api', [ productRoutes, userRoutes, orderRoutes, categoryRoutes, uploadRoutes,  ]);
