@@ -10,6 +10,7 @@ try{
     // console.log(req.body);
     const user = new User(req.body);
     user.role = "CLIENT_ROLE";
+    console.log('user', user)
     // codificacion de password con bcrypt:
     const passwordHash = await bcrypt.hash(user.password, salRounds);
     user.password = passwordHash;  
@@ -109,7 +110,7 @@ async function deleteUser(req, res) {
     try {
     const id = req.params.id;
     const deleteUser = await User.findByIdAndDelete(id);
-    if(!deleteUser) return responseCreator(res, 404, 'No se encontro el usuario');
+    if(!deleteUser) return responseCreator(res, 404, 'No se encontró el usuario');
     return responseCreator(res, 200 , 'Usuario borrado correctamente', { deleteUser })
     }catch (error) {
     console.log(error);
@@ -124,7 +125,8 @@ async function updateUser(req, res) {
 
     try{
     const id = req.params.id;
-    if(id !== req.user._id){
+    console.log('req.user', req.user)
+    if(id !== req.user._id && req.user.role !== 'ADMIN_ROLE'){
     return responseCreator(res, 401, 'No puede modificar este usuario');
     }
 

@@ -56,11 +56,32 @@ total += order.subtotal
   }
 }
 
- async function getOrders() {
-const response = await axios.get('http://localhost:4000/api/orders');
-order = response.data.orders
-paintTable(order)
- }
+//  async function getOrders() {
+// const response = await axios.get('http://localhost:4000/api/orders', { 
+//   headers:{
+//     Authorization:localStorage.getItem('token')
+//   }
+// });
+// order = response.data.orders
+// paintTable(order)
+//  }
+
+function getOrders() {
+  axios.get('http://localhost:4000/api/orders', {
+    headers: {
+      Authorization: localStorage.getItem('token') || ''
+    }
+  })
+  .then(response => {
+    const order = response.data.orders;
+    paintTable(order);
+  })
+  .catch(error => {
+    console.error('Error al obtener los pedidos:', error);
+  });
+}
+
+
 
 
 

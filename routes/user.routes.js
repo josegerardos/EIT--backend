@@ -5,19 +5,19 @@ const jwtVerify = require('../middlewares/jwtVerify');
 const isAdmin = require('../middlewares/isAdmin');
 
 // GET-Leer todos los  usuarios:
-router.get('/admin-user',  userController.getAllUsers);
+router.get('/admin-user', [jwtVerify, isAdmin], userController.getAllUsers);
 
 // GET-Leer usuario:
 router.get('/users/:id', [jwtVerify], userController.getUser);
 
 // POST-Crear o añadir usuario:
-router.post('/users', userController.postUser);
+router.post('/users', [ jwtVerify, isAdmin ], userController.postUser);
 
 // DELETE-Borrar usuario:
-router.delete('/users/:id', jwtVerify, userController.deleteUser);
+router.delete('/users/:id', [ jwtVerify,  isAdmin ], userController.deleteUser);
 
 // PUT-Actualizar usuario:
-router.put('/users/:id', [jwtVerify],  userController.updateUser);
+router.put('/users/:id', [ jwtVerify ],  userController.updateUser);
 
 // Patch cambiar contraseña:
 router.patch('/users/:id/password', userController.updatePassword); 

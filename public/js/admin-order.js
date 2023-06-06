@@ -1,12 +1,21 @@
 
+const token = localStorage.getItem('token')
+let orders = []
+const response = axios.get('http://localhost:4000/api/orders', {
+  headers:{
+    Authorization: token
+  }
+}).then((response) => {
+   orders = response.data.orders;
+renderTable()
+})
+      
 
 async function renderTable() {
 const tableBody = document.getElementById("table-body");
 
     try {
-      const response = await axios.get('http://localhost:4000/api/orders');
       
-      const orders = response.data.orders;
   
       tableBody.innerHTML = "";
       if (orders.length === 0) {
@@ -27,9 +36,9 @@ const tableBody = document.getElementById("table-body");
             <td class="product__price">${order.total}</td>
             <td class="product__price">${order.status}</td>
             <td class="product__actions">
-              <button class="product__actions-btn" onclick="editProduct(${index})"><i class="fa-solid fa-pencil"></i></button>
+              <button class="product__actions-btn" onclick="editOrder(${index})"><i class="fa-solid fa-pencil"></i></button>
               <button class="product__actions-btn product__actions-btn--edit" onclick="deleteProduct(${index})"><i class="fa-solid fa-trash-can"></i></button>
-              <button class="product__actions-btn product__actions-btn--favorite ${order.favorite ? 'active' : '' }" onclick="setFavoriteProduct(${index})"> <i class="fa-regular fa-star"></i></button>
+              
             </td>
           </tr>`;
   
@@ -43,4 +52,42 @@ const tableBody = document.getElementById("table-body");
           })
     }
   }
-  renderTable()
+
+
+async function editOrder(index) {
+  selectedOrder = orders[index]
+  let editForm = document.getElementById('editOrder')
+  console.log(selectedOrder)
+editForm.innerHTML = `<select id ='status-change'>
+<option>onhold</option>
+<option>inprogress</option>
+<option>done</option>
+</select>
+<button id = 'edit-button'>editar</button>
+`
+let editButton = document.getElementById('edit-button')
+let statusChange = document.getElementById('status-change')
+editButton.addEventListener('click',async (event) => {
+  event.preventDefault()
+  let options = ['onhold', 'inprogress', 'done']
+  let data = {
+    status:options[statusChange.selectedIndex]
+  }
+  await axios.put('http://localhost:4000/api/orders/'+selectedOrder._id, data, {
+    headers:{
+      Authorization: token
+    }
+  } )
+
+  let respuesta = await axios('http://localhost:4000/api/orders', {
+    headers:{
+      Authorization: token
+    }
+  }) 
+ orders = respuesta.data.orders
+renderTable()
+})
+}
+
+
+

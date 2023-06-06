@@ -6,9 +6,10 @@ const { responseCreator } = require('../utils/utils');
 async function jwtVerify (req, res, next) {
     try{
     const token = req.headers.authorization;
-    console.log('token', token)
+    
     const payload = jwt.verify(token, secret);
     req.user = payload;
+    // console.log('payload', payload)
     next();
     } catch (error) {
     console.log(error)

@@ -6,7 +6,7 @@ const uploadController = require('../controllers/upload.controller');
 const jwtVerify = require('../middlewares/jwtVerify');
 
 // obtener todos los productos:
-router.get("/products", productController.getAllProducts);
+router.get("/products",  [ jwtVerify, isAdmin ], productController.getAllProducts);
 
 // eliminar producto :
 router.delete("/products/:id", [ jwtVerify, isAdmin ] ,   productController.deleteProduct);

@@ -10,7 +10,7 @@ const URL_public = 'http://localhost:4000';
 
 async function renderTable() {
   try {
-    const response = await axios.get('http://localhost:4000/api/products');
+    const response = await axios.get('http://localhost:4000/api/products',)
     
     const products = response.data.productos;
 
@@ -53,7 +53,7 @@ async function renderTable() {
 renderTable()
 
 
-
+const token = localStorage.getItem('token');
 async function addProduct(evt) {
   console.log('isediting', isEditing)
   evt.preventDefault();
@@ -74,7 +74,7 @@ data[input.id] = input.value
     if (isEditing) {
       await axios.put(`http://localhost:4000/api/products/${products[editIndex]._id}`, data, { 
         headers:{
-          Authorization:localStorage.getItem('token')
+          Authorization: token
         }
       });
       isEditing = false;
@@ -85,7 +85,7 @@ data[input.id] = input.value
     } else {
       await axios.post('http://localhost:4000/api/product', data, { 
         headers:{
-          Authorization:localStorage.getItem('token')
+          Authorization: token
         }
       });
 
@@ -131,7 +131,11 @@ async function deleteProduct(index) {
         if(value === 'delete' ) {
           try {
             
-            await axios.delete(`http://localhost:4000/api/products/${products[index]._id}`);
+            await axios.delete(`http://localhost:4000/api/products/${products[index]._id}`, { 
+              headers:{
+                Authorization: token
+              }
+            });
             swal({
               title:`Elemento borrado correctamente`,
               icon:'success'
