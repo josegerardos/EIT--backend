@@ -1,0 +1,24 @@
+.whatsapp-container{
+    
+position: fixed;
+right: 25px;
+bottom: 220px;
+&__img{
+width: 70px;
+border-radius: 50%;
+transition: all 400ms easy;
+&:hover{
+box-shadow: 5px 5px 20px rgba(0,0,0,0.2);
+transform: translateY(-3%);
+}
+}
+}
+
+@media screen and (min-width:600px){
+.whatsapp-container{
+bottom: 100px;
+}
+}
+
+
+

@@ -1,0 +1,412 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+.titlle-product{
+padding:1rem;
+text-transform: uppercase;
+font-size: 1.5rem;
+text-align: center;
+font-family:cursive;
+color:$color-bg-secundary;
+
+}
+.main{
+    flex-grow: 1;
+    
+}
+.container1{
+display: flex;
+flex-direction: column;
+gap: 1rem ;
+margin-bottom: 2rem;
+}
+// ==============================================header==============================
+.header-prod{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1;
+}
+
+.navbar-prod{
+    height: 50px;
+    background-color: $color-bg-secundary;
+    display: flex;
+    align-items: center;
+    position: relative;
+    &__logo-prod{
+    height: 45px;
+    }
+    &__menu-label-prod{
+    color: $color-text-ligth;
+    height: 42%;
+    width: 44px;
+    margin-right: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    }
+    &__menu-btn-prod{
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    opacity: 0;
+    }
+    &__menu-btn-prod:checked ~ .navbar-prod__nav-links-container-prod {
+    height:calc(100vh - 50px);
+    }
+    &__menu-btn-prod:checked ~ &__menu-label-prod &__menu-icon-prod{
+    background: transparent;
+    &::after{
+    transform: rotate(-45deg);
+    top: 0;
+    }
+    &::before{
+    transform: rotate(45deg);
+    top: 0;
+    }
+    }
+    &__menu-icon-prod{
+    height: 2px;
+    background-color: $color-text-ligth;
+    width: 18px;
+    position: relative;
+    &::after, &::before{
+    content: "";
+    height: 2px;
+    background-color: $color-text-ligth;
+    position: absolute;
+    width: 100%;
+    transition: all .2s ease-out;
+    }
+    &::after{
+    top: 5px;
+    }
+    &::before{
+    top: -5px;}
+    }     
+    &__nav-links-container-prod{
+    list-style: none;
+    position: absolute;
+    top: 50px;
+    background-color: $color-bg-secundary;
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    transition: height .3s ease-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    }
+    &__nav-item-prod{
+    color: $color-text-ligth;   
+    }
+    &__nav-link-prod{
+    position: relative;
+    color: $color-text-ligth;
+    padding: .90rem;
+    margin: 0 1px;
+    overflow: hidden;
+    &::before{
+    content: "";
+    height: 1px;
+    width: 0%;
+    background: $color-text-ligth;
+    position: absolute;
+    bottom: 4px;
+    left: -9px;
+    transition: 0.4s ease-out;
+    }
+    &:hover::before{
+    width:100% ;
+    }
+    }    
+}
+
+.user-navbar-prod{
+    margin-left: auto;
+    color: $color-text-ligth;
+    display: flex;
+    gap: .5rem;
+    align-items: center;
+    padding: 0 1rem;
+    &__user-avatar-prod{
+    width: 35px;
+    }
+    &__cart-icon-container-prod{
+        margin-right: .5rem ;
+        position: relative;
+        }
+    &__cart-badge-prod{
+        position: absolute;
+        top: -8px;
+        right: -8px;
+        height: 16px;
+        width: 16px;
+        border-radius: 50%;
+        background-color: $color-bg-red;
+        color: $color-text-ligth;
+        font-size: 12px;
+        text-align: center;
+        }
+
+
+
+
+}
+
+@media screen and (min-width: 600px){
+    .navbar-prod{
+    &__menu-label-prod, &__menu-btn-prod{
+    display: none;
+    }
+    &__nav-links-container-prod{
+    position: static;
+    flex-direction: row;
+    height: 100% !important;
+    width: auto ;
+    background-color: $color-bg-secundary;
+    }
+    }
+    .user-navbar-prod{
+    order: 3;
+    }
+    }
+
+// ======================================================================================
+.table-container{
+width: 100vw;
+margin-left: auto;
+margin-right: auto;
+}
+.table-product{
+background-color: $color-text-ligth ;
+border-collapse: collapse;
+border-color: $color-bg-secundary;
+&__thead{
+    background-color: $color-bg-secundary;
+    color: $color-text-ligth;
+}
+&__td{
+    background-color: $color-bg-secundary;
+    color: $color-text-ligth;
+    font-size: .75rem;
+}
+&__th{
+    border: 2px solid $color-bg-secundary;
+    font-size: .75rem;
+    padding: .5rem;
+&__tr{
+    padding: .5rem;
+
+}
+}
+}
+.product{
+background-color: aliceblue ;
+&__img{
+    background-color:rgb(41, 39, 39);
+    object-fit: cover;
+}
+&__img--cell{
+    width: 75px;
+    object-fit: cover ;
+    height: 75px;
+    border-radius: 50%;
+    display: block;
+    margin:0 auto ;
+    background-color: aliceblue;
+    padding: 10px;
+}
+&__name{
+    text-align: center;
+}
+&__description{
+    width: 30%;
+    text-align: justify;
+    padding: 10px;
+}
+&__price{
+    font-weight: bold;
+    text-align: center;
+}
+&__actions{
+vertical-align: center;
+text-align: center;
+font-size: 1.75rem;
+}
+&__actions-btn{
+background-color: $color-bg-red;
+border: none;
+padding: 0.25rem;
+border-radius: 2px;
+color: $color-text-ligth;
+}
+&__actions-btn:hover{
+    background-color: $color-bg1-red ;
+}
+&__actions-btn--edit{
+    background-color: $color-bg-secundary;
+}
+&__actions-btn--edit:hover{
+    background-color: $color-bg1-secundary;
+}
+&__actions-btn--favorite{
+    background-color: $color-bg-yellow;
+}
+&__actions-btn--favorite.active{
+    background-color: $color-bg1-yellow;
+}
+&__actions-btn--favorite:hover{
+    background-color: $color-bg1-yellow ;
+}
+}
+.table-product tr td:not(:first-child) {
+padding: .5rem;
+}
+.table-product tbody tr:nth-child(odd) {
+background-color: rgb(161, 198, 212) ;
+}
+
+.form-product{
+padding: 2rem;
+margin-left: auto;
+margin-right: auto;
+&__input-box{
+margin-bottom: 1rem;
+}
+&__input-prod{
+margin: 10px 0;
+padding: 3px;
+background-color: transparent;
+outline: 1px solid $color-bg-secundary;
+width: 100%;
+margin: 10px 0;
+border: none;
+border-radius: 5px;
+padding: 0.25rem;
+}
+&__text{
+margin: 10px 0;
+padding: 3px;
+border-radius: 5px;
+border-color: $color-bg-secundary;
+background-color: aliceblue;
+}
+&__submit-btn-container{
+    color: $color-bg-primary;
+    text-align: center;
+}
+&__submit-btn{
+
+    padding: 8px;
+    color:$color-bg-secundary;
+    border: 1px solid $color-bg-secundary;
+    border-radius: 4px;
+    transition: all 400ms ease;
+}
+&__submit-btn:hover{
+    background-color: $color-bg-secundary;
+    color: $color-text-ligth;
+}
+}
+.edit-btn {
+    background-color: $color-bg-primary;
+    border-color: $color-text-ligth;
+    color: $color-text-ligth;
+}
+
+@media screen and (min-width: 1000px) {
+.titlle-product{
+font-size: 18px;
+text-align: left;
+}
+.container1{
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding-top: 3rem;
+}
+}
+
+// ===========================================================================================
+
+.footer-prod{
+    display: grid;
+    display: flex;
+    flex-direction: column;
+    background-color: $color-bg-secundary;
+    padding: 10px;
+    position: relative;
+    &__logo-prod{
+    margin-left: 10px;
+    }
+    &__company-name-prod{
+    color:$color-text-ligth;
+    font-family: cursive;    
+    }
+    &__contact-item-prod{
+    list-style: none;
+    }
+    &__contact-link-prod{
+    color: $color-text-ligth;
+    padding: .25rem;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    }
+    &__contact-icon-prod{
+    font-size: 1rem ;
+    &--facebook{
+        color: $color-text-ligth ;
+    }
+    &--instagram-prod{
+    color:$color-text-ligth ;
+    }
+    &--linkedln-prod{
+    color: $color-text-ligth ;
+    }
+    &--copyright-prod{
+    color:$color-text-ligth ;
+    font-size: .75rem;
+    padding: 5px 0;
+    
+    }
+    }
+}
+    @media screen and (min-width: 600px) {
+    .footer-prod{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        position: relative;
+        overflow: hidden;
+        &__logo-prod{
+        margin-left: 13px;
+        }
+        &__contact-icon-prod{
+        &--copyright-prod{
+        font-size: 8px;
+        position: absolute;
+        bottom: 11px;
+        right: 12px;
+        }
+        }
+        }
+    }
+
+
+
+
+
+
+

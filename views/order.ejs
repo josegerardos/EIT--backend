@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('partials/head', {title: 'contact'} ) %>
+
+
+<body class="body-order">
+<h1 class="titlle-order">ORDER</h1>
+<!-- ======================================================================================= -->
+
+<%- include('partials/header') %>
+
+
+<!-- =================================================================================================== -->
+<main class="main-order">
+    
+
+<div class="container2">
+<table class="table-order" border="2px" id="table-container" >
+    <thead class="table-order__thead">
+        <tr class ="table-order__tr">
+        
+        <th class="table-order__th">IMAGEN</th>
+        <th class="table-order__th">PRODUCTO</th>
+        <th class="table-order__th">DESCRIPCIÓN</th>
+        <th class="table-order__th">CANTIDAD</th>
+        <th class="table-order__th">PRECIO</th>
+        <th class="table-order__th">SUBTOTAL</th>
+        <th class="table-order__th">ACTION</th>
+        </tr>
+        
+        
+    </thead>
+
+    <tbody  class="table-order__tbody" id="table-body"></tbody>
+</table>
+</div>
+
+
+<a class="btn-order" >
+    <button class="btn-order__btn-order-buy" id="btn-create-order">
+        Finalizar compra
+    </button>
+</a>
+
+
+
+
+</main>
+     <!-- ===================================================footer=====================================    -->
+<%- include('partials/footer') %>
+     
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="/js/order.js"></script>     
+<script src="/js/badge.js"></script>
+
+</body>
+</html>

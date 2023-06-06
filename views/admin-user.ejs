@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/head', {title: 'Admin Users'} ) %>
+
+<body>
+
+<%- include('partials/header') %>
+    
+
+
+
+
+<!-- ======================================================================================================= -->
+<main class="main-user">
+    <h1 class="titlle-user">ADMINISTRADOR DE USUARIOS</h1>
+    <div class="containerUser">
+    <!-- <form id="add-user" class="form-user" onsubmit="addUser(event)">
+
+        <div class="form-user__imput-box">
+        <label class="form-user__label-user" for="fullname-user">Nombre completo</label><br>
+        <input class="form-user__input-user" type="text" name="fullname" id="fullname-user" size="40" required minlength="8" maxlength="45" autofocus>
+        </div>
+        <div class="form-user__imput-box">
+        <label class="form-user__label-user" for="email-user">Email</label><br>
+        <input class="form-user__input-user" type="email" name="email" id="email-user" required placeholder="example@email.com" minlength="8" maxlength="45" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}" >
+        </div>
+        <div class="form-user__imput-box">
+        <label class="form-user__label-user" for="role-user">Rol</label><br>
+        <input class="form-user__input-user" type="text" name="role" id="role-user" required minlength="8" maxlength="45">
+        </div>
+
+        <div class="form-user__submit-btn-container-user">
+        <button type="submit" class="form-user__submit-user " id="submit-btnUser">Cargar usuario</button>
+        </div>
+    </form> -->
+
+    <form id="add-user" class="form-user" onsubmit="addUser(event)">
+        <div class="form-user__imput-box">
+          <label class="form-user__label-user" for="fullname-user">Nombre completo</label><br>
+          <input class="form-user__input-user" type="text" name="fullName" id="fullname-user" size="40" required minlength="8" maxlength="45" autofocus>
+        </div>
+        <div class="form-user__imput-box">
+          <label class="form-user__label-user" for="email-user">Email</label><br>
+          <input class="form-user__input-user" type="email" name="email" id="email-user" required placeholder="example@email.com" minlength="8" maxlength="45" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}">
+        </div>
+        <div class="form-user__imput-box">
+          <label class="form-user__label-user" for="role-user">Rol</label><br>
+          <select class="form-user__input-user" name="role" id="role-user" required>
+            <option value="CLIENT_ROL">Cliente</option>
+            <option value="USER_ROL">Usuario</option>
+            <option value="ADMIN_ROL">Administrador</option>
+          </select>
+        </div>
+        <div class="form-user__submit-btn-container-user">
+          <button type="submit" class="form-user__submit-user" id="submit-btnUser">Cargar usuario</button>
+        </div>
+      </form>
+      
+
+    <div class="table-userContainer">
+    <table class="table-user" border="2px">
+    <thead class="table-user__thead">
+            <tr class ="table-user__tr">
+            <th class="table-user__th">NOMBRE COMPLETO</th>
+            <th class="table-user__th">EMAIL</th>
+            <th class="table-user__th">ROL</th>
+            <th class="table-user__th">ACCIONES</th>
+            </tr>
+    </thead>
+    <tbody id="table-bodyUser" class="table-user__tbody">
+            
+    </tbody>
+    </table>
+    </div>
+    </div>
+    </main>
+    <!-- =========================================================================================== -->
+<%- include('partials/footer') %>
+    
+    
+
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="/js/isAdmin.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="/js/admin-user.js"></script>
+    <script src="/js/order.js"></script>
+    <script src="/js/badge.js"></script>
+    
+    
+</body>
+</html>

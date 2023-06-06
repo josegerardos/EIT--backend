@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('partials/head', {title: 'contact'} ) %>
+
+<body>
+    
+<!-- =================================HEADER====================================== -->
+
+<%- include('partials/header') %>
+
+<!-- =====================================MAIN========================================= -->
+    <main class="main-contact">
+    <div class="form-container-contact">
+    <section class="form-contact">
+    <nav>
+    <div>
+    <a class="form-contact__nav-input" href="/">Contáctanos!</a>
+    </div>
+    </nav>
+    <!-- =====================MAIN FORM -->
+    <main class="form-contact__main">
+    <form>
+    <p>
+    <label class="form-contact__label" for="fullname-input">Nombre y Apellido</label><br>
+    <input class="form-contact__input" type="text" name="fullname-input" id="fullname-input" required minlength="8" maxlength="45" autofocus size="40%" placeholder="Quentin Tarantino">
+    </p>
+    <p>
+    <label class="form-contact__label" for="email-input">Email</label><br>
+    <input class="form-contact__input" type="email" name="email-input" id="email-input" required placeholder="example@email.com" minlength="8" maxlength="45"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" size="40%">
+    </p>
+    <div>
+    <label class="form-contact__label" for="description">Consulta</label><br>
+    <textarea class="form-contact__textarea" name="description" id="description" cols="40" rows="5" placeholder="Escribe tu consulta"></textarea>
+    </div>
+    </main>
+    <!-- ============================================= -->
+    <footer class="form-contact__footer-btn">
+    <button class="form-contact__btn-contact" type="submit">Enviar</button>
+    </footer>
+    </form>
+    </section>
+    <section class="iframe-container" >
+    <nav>
+    <a class="iframe-container__nav-iframe" href="/">Visitanos!</a>
+    </nav>
+    <iframe class="iframe-container__img" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d6570.341817862582!2d-58.537151471435706!3d-34.57454179831039!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2sar!4v1674560420674!5m2!1ses!2sar" width="345px" height="180px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> 
+    </section>
+    </div>
+    </main>
+<!-- ==============================================FOOTER================================== -->
+<%- include('partials/footer') %>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    
+        <script src="/js/header.js"></script>
+        <script src="/js/order.js"></script>
+        <script src="/js/badge.js"></script>
+        </body>
+        </html>

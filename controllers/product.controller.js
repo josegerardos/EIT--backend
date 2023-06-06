@@ -2,6 +2,9 @@ const product = require('./../schemas/product.schema')
 
 const getAllProducts = (req, res) => {
     product.find().then(function(productos){
+    if(!product) return res.status(404).send({
+    msg:'No se encontraron los productos'
+    })
     return res.status(200).send({
     msg:'productos obtenidos correctamente',
     productos: productos
@@ -14,23 +17,32 @@ const getAllProducts = (req, res) => {
 
 //todo ==========================================================================================
 
+
 function addProduct(req, res) {
+    // console.log(req.body);
+    // console.log(req.file);
+    
     const Product = new product(req.body);
-    Product.save().then(function(Product) {
-    return res.status(200).send({
-    msg:'Producto guardado correctamente',
-    Product
-});
-}).catch(error =>{
-    console.log(error);
-    return res.status(500).send('El producto no se pudo guardar');
-});
-};
+    Product.save()
+        .then(function(Product) {
+            return res.status(200).send({
+                msg: 'Producto guardado correctamente',
+                Product
+            });
+        })
+        .catch(error => {
+            console.log(error);
+            return res.status(500).send('El producto no se pudo guardar');
+        });
+}
+
+
 
 //todo ==================================================================================================
 
 function deleteProduct(req, res){
     const id = req.params.id
+    console.log(id)
     product.findByIdAndDelete(id).then((deleted) => {
     if(!deleted){
     return res.status(404).send({
@@ -84,7 +96,7 @@ function getProduct(req,res){
 
 async function updateProduct(req, res) {
     try{
-    const id = req.query.id;
+    const id = req.params.id;
     const data = req.body;
     const newProduct = await product.findByIdAndUpdate(id, data, {new:true});
     if(!newProduct){

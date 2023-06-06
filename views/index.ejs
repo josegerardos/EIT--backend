@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('partials/head', {title: 'Home-Ecommerce'} ) %>
+
+<body>
+
+    <!-- =====================================header================================================== -->
+
+<%- include('partials/header') %>
+    
+
+<!-- =========================================main============================================= -->
+
+<main class="main">
+    <section class="section-cards">
+        <header class="section-cards__header">
+        <div class="section-cards__title-container">
+        <h1 class="section-cards__title">Holy Surf
+        </h1>
+        <p class="section-cards__subtitle">Hacemos tablas en diferentes medidas con el diseño que tu elijas
+        </p>
+        </div>
+        <div class="section-cards__products-search-container">
+        <div class="product-search">
+        <label for="buscar" class="product-search__label"><i class="fa-solid fa-magnifying-glass"></i></label>
+        <input type="text" name="buscar" class="product-search__input" size="40px" id="buscar" autofocus maxlength="25" minlength="3" >
+        <button class="product-search__btn">Buscar</button>
+        </div>
+        <div class="section-cards__products-count">
+        Se encontraron <span id="cantidad-de-productos"></span>productos
+        </div>
+        </div>
+        </header>
+        <h1 class="section-cards__category">
+            CATEGORIA: OFERTAS
+        </h1>
+        <!-- =====================================card===================================================== -->
+        <div class="cards-container" id = "card-container">
+            <article class="card">
+                <div class="card__header">
+                <img src="/assets/product-img/img 1 png.png" alt="product image" class="card__img">
+                </div>
+                <div class="card__body">
+                <div class="card__title">
+                All round
+                </div>
+                <p class="card__description">
+                Tabla de surf-mini funboard 6.0 equilibrio perfecto entre velocidad y estabilidad.
+                </p>
+                
+                <div class="card__price">
+                $ 80000
+                </div>
+                <div class="card__date">
+                13/12/2022
+                </div>
+                
+                </div>
+                <div class="card__footer">
+                <div class="card__btn-buy-container">
+                <a class="card__btn-buy" href="">Comprar</a>
+                </div>
+                <div class="card__btn-container">
+                <a class="card__btn" href="">Detalle</a>
+                </div>
+                </div>
+            </article>
+            <article class="card">
+                <div class="card__header">
+                <img src="/assets/product-img/img 2 png.png" alt="product image" class="card__img">
+                </div>
+                <div class="card__body">
+                <div class="card__title">
+                Touring
+                </div>
+                <p class="card__description">
+                Tabla de surf soft top 7'2, las más usadas para realizar travesías o largos recorridos.
+                </p>
+                <div class="card__price">
+                $ 82000
+                </div>
+                <div class="card__date">
+                13/12/2022
+                </div>
+                </div>
+                <div class="card__footer">
+                <div class="card__btn-buy-container">
+                <a class="card__btn-buy" href="">Comprar</a>
+                </div>
+                <div class="card__btn-container">
+                <a class="card__btn" href="">Detalle</a>
+                </div>
+                </div>
+            </article>
+            <article class="card">
+                <div class="card__header">
+                <img src="/assets/product-img/img 3 png.png" alt="product image" class="card__img">
+                </div>
+                <div class="card__body">
+                <div class="card__title">
+                Racing
+                </div>
+                <p class="card__description">
+                Tabla de surf 7.0 evo G-boards 8', presenta soporte y anclaje y por lo tanto permite maniobras rápidas.
+                </p>
+                <div class="card__price">
+                $ 79000
+                </div>
+                <div class="card__date">
+                13/12/2022
+                </div>
+                </div>
+                <div class="card__footer">
+                <div class="card__btn-buy-container">
+                <a class="card__btn-buy" href="">Comprar</a>
+                </div>                
+                <div class="card__btn-container">
+                <a class="card__btn" href="">Detalle</a>
+                </div>
+                </div>
+            </article>
+            <article class="card">
+                <div class="card__header">
+                <img src="/assets/product-img/img 4 jpg.jpg" alt="product image" class="card__img">
+                </div>
+                <div class="card__body">
+                <div class="card__title">
+                Yoga
+                </div>
+                <p class="card__description">
+                Tabla de surf soft shockn pro superwide 7, excelente para la yoga en la playa, son livianas y consta de buena amortiguación. 
+                </p>
+                <div class="card__price">
+                $ 69000
+                </div>
+                <div class="card__date">
+                13/12/2022
+                </div>
+                </div>
+                <div class="card__footer">
+                <div class="card__btn-buy-container">
+                <a class="card__btn-buy" href="">Comprar</a>
+                </div>
+                <div class="card__btn-container">
+                <a class="card__btn" href="">Detalle</a>
+                </div>
+                </div>
+            </article>
+            <article class="card">
+                <div class="card__header">
+                <img src="/assets/product-img/img 5 png.webp" alt="product image" class="card__img">
+                </div>
+                <div class="card__body">
+                <div class="card__title">
+                Sub/surf
+                </div>
+                <p class="card__description">
+                Tabla de surf soft blue pro wide 8', muy versátil gracias a su diseño es la más utilizada para travesías de olas con poca fuerza.
+                </p>
+                <div class="card__price">
+                $ 76000
+                </div>
+                <div class="card__date">
+                13/12/2022
+                </div>
+                </div>
+                <div class="card__footer">
+                <div class="card__btn-buy-container">
+                <a class="card__btn-buy" href="">Comprar</a>
+                </div>
+                <div class="card__btn-container">
+                <a class="card__btn" href="">Detalle</a>
+                </div>
+                </div>
+            </article>
+            <article class="card">
+                <div class="card__header">
+                <img src="/assets/product-img/img 6 png.png" alt="product image" class="card__img">
+                </div>
+                <div class="card__body">
+                <div class="card__title">
+                Windsup
+                </div>
+                <p class="card__description">
+                Tabla de surf soft 8'0 art mar cristal, sirve para las travesías tipo paddle surf y por su rígidez para otras disciplinas. 
+                </p>
+                <div class="card__price">
+                $ 72000
+                </div>
+                <div class="card__date">
+                13/12/2022
+                </div>
+                </div>
+                <div class="card__footer">
+                <div class="card__btn-buy-container">
+                <a class="card__btn-buy" href="">Comprar</a>
+                </div>
+                <div class="card__btn-container">
+                <a class="card__btn" href="">Detalle</a>
+                </div>
+                </div>
+            </article>
+            <article class="card">
+                <div class="card__header">
+                <img src="/assets/product-img/img 7 png.png" alt="product image" class="card__img">
+                </div>
+                <div class="card__body">
+                <div class="card__title">
+                Desmontables
+                </div>
+                <p class="card__description">
+                Tabla de surf g-boards 212cm bic sport tahe, o modulares tipo de material polietileno, para obtener velocidad y fluidez.
+                </p>
+                <div class="card__price">
+                $ 68000
+                </div>
+                <div class="card__date">
+                13/12/2022
+                </div>
+                </div>
+                <div class="card__footer">
+                <div class="card__btn-buy-container">
+                <a class="card__btn-buy" href="">Comprar</a>
+                </div>
+                <div class="card__btn-container">
+                <a class="card__btn" href="">Detalle</a>
+                </div>
+                </div>
+            </article>
+            <article class="card">
+                <div class="card__header">
+                <img src="/assets/product-img/img 8 png.png" alt="product image" class="card__img">
+                </div>
+                <div class="card__body">
+                <div class="card__title">
+                Evolution
+                </div>
+                <p class="card__description">
+                Tabla de surf expoxy xtorsion 5'8 x 21.5, adecuada para principiantes ya q ofrecen mas flotabilidad, estabilidad y mayor facilidad para girar.
+                </p>
+                <div class="card__price">
+                $ 70000
+                </div>
+                <div class="card__date">
+                13/12/2022
+                </div>
+                </div>
+                <div class="card__footer">
+                <div class="card__btn-buy-container">
+                <a class="card__btn-buy" href="">Comprar</a>
+                </div>
+                <div class="card__btn-container">
+                <a class="card__btn" href="">Detalle</a>
+                </div>
+                </div>
+            </article>
+            <article class="card">
+                <div class="card__header">
+                <img src="/assets/product-img/img 9 png.jpg" alt="product image" class="card__img">
+                </div>
+                <div class="card__body">
+                <div class="card__title">
+                Longboard
+                </div>
+                <p class="card__description">
+                Tabla de surf mar cristal 6' soft alta densidad, esta diseñada para la estabilidad máxima, mayor volumen y mayor deslizamiento.
+                </p>
+                <div class="card__price">
+                $ 65000
+                </div>
+                <div class="card__date">
+                13/12/2022
+                </div>
+                </div>
+                <div class="card__footer">
+                <div class="card__btn-buy-container">
+                <a class="card__btn-buy" href="">Comprar</a>
+                </div>
+                <div class="card__btn-container">
+                <a class="card__btn" href="">Detalle</a>
+                </div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+    <!-- ?=========================================accesorios========================================== -->
+    <!-- <section> -->
+        <!-- <h1 class="section-cards__category">
+            ACCESORIOS
+        </h1> -->
+
+        <!-- <div class="cards-container" id="card-container">
+            <article class="card">
+                <div class="card__header">
+                <img src="/assets/product-img/img 11 png.png" alt="product image" class="card__img">
+                </div>
+                <div class="card__body">
+                <div class="card__title">
+                Brewster Traction
+                </div>
+                <p class="card__description">
+                Lleva tu surf al proximo nivel con el pad antideslizante brewster está compuesto por tres piezas para trabajar con un rango mas amplio de formas de tail.
+                </p>
+                
+                <div class="card__price">
+                $ 15000
+                </div>
+                <div class="card__date">
+                13/12/2022
+                </div>
+                
+                </div>
+                <div class="card__footer">
+                <div class="card__btn-buy-container">
+                <a class="card__btn-buy" href="/pages/order/order.html" onclick="addToOrder(index)">Comprar</a>
+                </div>
+                <div class="card__btn-container">
+                <a class="card__btn" href="/pages/product-detail/product-detail.html">Detalle</a>
+                </div>
+                </div>
+            </article>
+            <article class="card">
+                <div class="card__header">
+                <img src="/assets/product-img/img 12 png.png" alt="product image" class="card__img">
+                </div>
+                <div class="card__body">
+                <div class="card__title">
+                Creatures pro 6
+                </div>
+                <p class="card__description">
+                Cuerda de pie para tabla de surf de 85,83 pulgadas, brazalete de seguridad ajustable para el tobillo.
+                </p>
+                
+                <div class="card__price">
+                $ 7000
+                </div>
+                <div class="card__date">
+                13/12/2022
+                </div>
+                
+                </div>
+                <div class="card__footer">
+                <div class="card__btn-buy-container">
+                <a class="card__btn-buy" href="/pages/order/order.html" onclick="addToOrder(index)">Comprar</a>
+                </div>
+                <div class="card__btn-container">
+                <a class="card__btn" href="/pages/product-detail/product-detail.html">Detalle</a>
+                </div>
+                </div>
+            </article>
+            <article class="card">
+                <div class="card__header">
+                <img src="/assets/product-img/img 13 png.png" alt="product image" class="card__img">
+                </div>
+                <div class="card__body">
+                <div class="card__title">
+                Boardbag
+                </div>
+                <p class="card__description">
+                Bolso de viaje para dos o tres velas con separador, fundas para colgar, mastil, alas, base y fuselaje.
+                </p>
+                
+                <div class="card__price">
+                $ 25000
+                </div>
+                <div class="card__date">
+                13/12/2022
+                </div>
+                
+                </div>
+                <div class="card__footer">
+                <div class="card__btn-buy-container">
+                <a class="card__btn-buy" href="/pages/order/order.html"onclick="addToOrder(index)" >Comprar</a>
+                </div>
+                <div class="card__btn-container">
+                <a class="card__btn" href="/pages/product-detail/product-detail.html">Detalle</a>
+                </div>
+                </div>
+            </article>
+            <article class="card">
+                <div class="card__header">
+                <img src="/assets/product-img/img 14 png.webp" alt="product image" class="card__img">
+                </div>
+                <div class="card__body">
+                <div class="card__title">
+                Suit volte
+                </div>
+                <p class="card__description">
+                Adecuado para quienes surfean regularmente y priorizan la flexibilidad y el valor, los trajes volte tienen caracteristicas inigualables.
+                </p>
+                
+                <div class="card__price">
+                $ 30000
+                </div>
+                <div class="card__date">
+                13/12/2022
+                </div>
+                
+                </div>
+                <div class="card__footer">
+                <div class="card__btn-buy-container">
+                <a class="card__btn-buy" href="/pages/order/order.html" onclick="addToOrder(index)">Comprar</a>
+                </div>
+                <div class="card__btn-container">
+                <a class="card__btn" href="/pages/product-detail/product-detail.html">Detalle</a>
+                </div>
+                </div>
+            </article>
+            <article class="card">
+                <div class="card__header">
+                <img src="/assets/product-img/img 15 png.png" alt="product image" class="card__img">
+                </div>
+                <div class="card__body">
+                <div class="card__title">
+                Soporte AA-9
+                </div>
+                <p class="card__description">
+                Acopla la cámara a una tabla de surf, las tiras proporcionadas evitan q la cámara se caiga si se desprende de la montura, viene con soporte de base.
+                </p>
+                
+                <div class="card__price">
+                $ 18000
+                </div>
+                <div class="card__date">
+                13/12/2022
+                </div>
+                
+                </div>
+                <div class="card__footer">
+                <div class="card__btn-buy-container">
+                <a class="card__btn-buy" href="/pages/order/order.html" onclick="addToOrder(index)">Comprar</a>
+                </div>
+                <div class="card__btn-container">
+                <a class="card__btn" href="/pages/product-detail/product-detail.html">Detalle</a>
+                </div>
+                </div>
+            </article>
+            <article class="card">
+                <div class="card__header">
+                <img src="/assets/product-img/img 16 png.png" alt="product image" class="card__img">
+                </div>
+                <div class="card__body">
+                <div class="card__title">
+                Camara GoPro surf
+                </div>
+                <p class="card__description">
+                Perfecto para tablas de surf, de paddle, cubiertas de barcos u otras superficies similares en las que necesites la máxima capacidad de sujeción.
+                </p>
+                
+                <div class="card__price">
+                $ 40000
+                </div>
+                <div class="card__date">
+                13/12/2022
+                </div>
+                
+                </div>
+                <div class="card__footer">
+                <div class="card__btn-buy-container">
+                <a class="card__btn-buy" href="/pages/order/order.html" onclick="addToOrder(index)">Comprar</a>
+                </div>
+                <div class="card__btn-container">
+                <a class="card__btn" href="/pages/product-detail/product-detail.html">Detalle</a>
+                </div>
+                </div>
+            </article>
+            <article class="card">
+                <div class="card__header">
+                <img src="/assets/product-img/img 17 png.png" alt="product image" class="card__img">
+                </div>
+                <div class="card__body">
+                <div class="card__title">
+                Funda dry leaves
+                </div>
+                <p class="card__description">
+                Diseño jaspeado con diferentes motivos, bolsillo exterior con cremallera, rejilla para evacuar el agua. 
+                </p>
+                
+                <div class="card__price">
+                $ 18000
+                </div>
+                <div class="card__date">
+                13/12/2022
+                </div>
+                
+                </div>
+                <div class="card__footer">
+                <div class="card__btn-buy-container">
+                <a class="card__btn-buy" href="pages/order/order.html" onclick="addToOrder(index)">Comprar</a>
+                </div>
+                <div class="card__btn-container">
+                <a class="card__btn" href="/pages/product-detail/product-detail.html">Detalle</a>
+                </div>
+                </div>
+            </article>
+            </div>
+
+
+    </section> -->
+</main>
+<div class="whatsapp-container">
+    <a href=" https://walink.co/f5a1de " class="whatsapp-container__link">
+        <img src=" https://cdn3.iconfinder.com/data/icons/social-media-logos-flat-colorful/2048/5302_-_Whatsapp-512.png  " alt=" Logo de Whatsapp " class="whatsapp-container__img">
+    </a>
+</div>
+<!-- ================================================footer======================================= -->
+<%- include('partials/footer') %>
+
+
+<script src="/js/order.js"></script>
+<script src="/js/badge.js"></script> 
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="/js/index.js"></script> 
+<script src="/js/header.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('partials/head', {title: 'Admin Product'} ) %>
+
+<body>
+<!-- ========================================================header================================== -->
+<%- include('partials/header') %>
+    
+<!-- ===================================================main==================================== -->
+<main class="main">
+    <h1 class="titlle-product">ADMINISTRADOR DE PRODUCTOS</h1>
+<div class="container1">
+    
+<form id="add-product" class="form-product" onsubmit="addProduct(event)">
+
+    <div class="form-product__input-box">
+    <label class="form-product__label-prod" for="name">Producto</label><br>
+    <input class="form-product__input-prod" type="text" name="name" id="name"  minlength="8" maxlength="35" autofocus required>
+    </div>
+    
+    <div class="form-product__input-box">
+    <label class="form-product__label-prod" for="description">Descripción</label><br>
+    <textarea class="form-product__text" name="description" id="description" rows="5" required ></textarea>
+    </div>
+
+    <div class="form-product__input-box">
+    <label class="form-product__label-prod" for="price">Precio</label><br>
+    <input class="form-product__input-prod" type="number" name="price" id="price" required min="1" max="9000000">
+    </div>
+
+    <div class="form-product__input-box">
+    <label class="form-product__label-prod" for="image">Imagen</label><br>
+    <input class="form-product__input-prod" type="url" id="image" name="file" required  value="https://img2.wallspic.com/previews/0/6/7/5/6/165760/165760-mar-agua-surf-tabla_de_surf-la_gente_en_la_naturaleza-500x.jpg">
+    </div>
+    <div class="form-product__submit-btn-container">
+    <button type="submit" class="form-product__submit-btn " id="submit-btn">Cargar producto</button>
+    </div>
+</form>
+
+<div class="table-container">
+<table class="table-product" border="2px" >
+<thead class="table-product__thead">
+    <tr class ="table-product__tr">
+    <th class="table-product__th">IMAGEN</th>
+    <th class="table-product__th">PRODUCTO</th>
+    <th class="table-product__th">DESCRIPCIÓN</th>
+    <th class="table-product__th">PRECIO</th>
+    <th class="table-product__th">ACCIONES</th>
+    </tr>
+</thead>
+<tbody id="table-body" class="table-product__tbody">
+    <tr class="table-product__tr">
+    <td class="table-product__td">img</td>
+    <td class="table-product__td">producto</td>
+    <td class="table-product__td">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, nulla.</td>
+    <td class="table-product__td">50000</td>
+    <td class="table-product__td">🖍🗑</td>
+    </tr>
+
+</tbody>
+</table>
+</div>
+</div>
+</main>
+<!-- ==================================================================================================== -->
+<%- include('partials/footer') %>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+<script src="/js/alert.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="/js/admin-product.js"></script>
+
+
+</body>
+</html>

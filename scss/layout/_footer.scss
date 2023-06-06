@@ -1,0 +1,63 @@
+.footer{
+    
+    display: flex;
+    flex-direction: column;
+    background-color:$color-bg-secundary;
+    padding: 10px;
+    position: relative;
+    &__logo{
+    margin-left: 10px;
+    }
+    &__company-name{
+    color:$color-text-ligth;
+    font-family: cursive;    
+    }
+    &__contact-item{
+    list-style: none;
+    }
+    &__contact-link{
+    color: $color-text-ligth;
+    padding: .25rem;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    }
+    &__contact-icon{
+    font-size: 1rem ;
+    &--facebook{
+        color: $color-text-ligth ;
+    }
+    &--instagram{
+    color:$color-text-ligth ;
+    }
+    &--linkedln{
+    color: $color-text-ligth ;
+    }
+    &--copyright{
+    color:$color-text-ligth ;
+    font-size: .75rem;
+    padding: 5px 0;
+    }
+    }
+}
+    @media screen and (min-width: 600px) {
+    .footer{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        position: relative;
+        overflow: hidden;
+        &__logo{
+        margin-left: 13px;
+        }
+        &__contact-icon{
+        &--copyright{
+        font-size: 8px;
+        position: absolute;
+        bottom: 11px;
+        right: 12px;
+        }
+        }
+        }
+    }
+

@@ -7,7 +7,7 @@ const jwt = require('jsonwebtoken');
 
 async function postUser(req, res) {
 try{
-    console.log(req.body);
+    // console.log(req.body);
     const user = new User(req.body);
     user.role = "CLIENT_ROLE";
     // codificacion de password con bcrypt:
@@ -16,7 +16,7 @@ try{
 
 
     const newUser = await user.save();
-    console.log(user)
+    // console.log(user)
     return res.status(201).send({
     msg:`Usuario creado correctamente`,
     user: newUser
@@ -113,7 +113,7 @@ async function deleteUser(req, res) {
     return responseCreator(res, 200 , 'Usuario borrado correctamente', { deleteUser })
     }catch (error) {
     console.log(error);
-    return responseCreator(res, 500, 'No se pudo hacer el borrado del usuario');
+    return responseCreator(res, 500, 'Error No se pudo hacer el borrado del usuario');
 
     };
 }

@@ -1,0 +1,28 @@
+.flex{
+    display: flex;
+}
+.hidden{
+    visibility: hidden;
+}
+.container{
+    max-width: 1081px;
+    margin: 0 auto;
+    padding: 1rem;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+.container [class*="-form"] {
+    padding: 2rem;
+}
+.container form[class*="-form"] input:not([type="radio"]) {
+    width: 100%;
+    font-size: 1.25rem;
+    font-family: monospace;
+    color: $color-bg-secundary;
+    padding: .5rem 1rem;
+    margin: 0.5rem 0;
+    border: none;
+    border-radius: 0.5rem;
+    background: #333;
+}

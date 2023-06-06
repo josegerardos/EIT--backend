@@ -1,0 +1,336 @@
+body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.header-contact{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1;
+}
+
+.navbar-contact{
+    height: 50px;
+    background-color: $color-bg-secundary;
+    display: flex;
+    align-items: center;
+    position: relative;
+    &__logo-contact{
+    height: 45px;
+    }
+    &__menu-label-contact{
+    color: $color-text-ligth;
+    height: 42%;
+    width: 44px;
+    margin-right: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    }
+    &__menu-btn-contact{
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    opacity: 0;
+    }
+    &__menu-btn-contact:checked ~ .navbar-contact__nav-links-container-contact {
+    height:calc(100vh - 50px);
+    }
+    &__menu-btn-contact:checked ~ &__menu-label-contact &__menu-icon-contact{
+    background: transparent;
+    &::after{
+    transform: rotate(-45deg);
+    top: 0;
+    }
+    &::before{
+    transform: rotate(45deg);
+    top: 0;
+    }
+    }
+    &__menu-icon-contact{
+    height: 2px;
+    background-color: $color-text-ligth;
+    width: 18px;
+    position: relative;
+    &::after, &::before{
+    content: "";
+    height: 2px;
+    background-color: $color-text-ligth;
+    position: absolute;
+    width: 100%;
+    transition: all .2s ease-out;
+    }
+    &::after{
+    top: 5px;
+    }
+    &::before{
+    top: -5px;}
+    }     
+    &__nav-links-container-contact{
+    list-style: none;
+    position: absolute;
+    top: 50px;
+    background-color: $color-bg-secundary;
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    transition: height .3s ease-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    }
+    &__nav-item-contact{
+    color: $color-text-ligth;   
+    }
+    &__nav-link-contact{
+    position: relative;
+    color: $color-text-ligth;
+    padding: .90rem;
+    margin: 0 1px;
+    overflow: hidden;
+    &::before{
+    content: "";
+    height: 1px;
+    width: 0%;
+    background: $color-text-ligth;
+    position: absolute;
+    bottom: 4px;
+    left: -9px;
+    transition: 0.4s ease-out;
+    }
+    &:hover::before{
+    width:100% ;
+    }
+    }    
+}
+
+.user-navbar-contact{
+    margin-left: auto;
+    color: $color-text-ligth;
+    display: flex;
+    gap: .5rem;
+    align-items: center;
+    padding: 0 1rem;
+    &__user-avatar-contact{
+    width: 35px;
+    }
+    &__cart-icon-container-contact{
+        margin-right: .5rem ;
+        position: relative;
+        }
+    &__cart-badge-contact{
+        position: absolute;
+        top: -8px;
+        right: -8px;
+        height: 16px;
+        width: 16px;
+        border-radius: 50%;
+        background-color: $color-bg-red;
+        color: $color-text-ligth;
+        font-size: 12px;
+        text-align: center;
+        }   
+}
+.iframe-container{
+    &__nav-iframe{
+        color: $color-text-ligth;
+        padding: 10px;
+        margin-left: 5px;
+    }
+}
+
+@media screen and (min-width: 600px){
+    .navbar-contact{
+    &__menu-label-contact, &__menu-btn-contact{
+    display: none;
+    }
+    &__nav-links-container-contact{
+    position: static;
+    flex-direction: row;
+    height: 100% !important;
+    width: auto ;
+    background-color: $color-bg-secundary;
+    }
+    }
+    .user-navbar-contact{
+    order: 3;
+    }
+}
+
+.main-contact{
+    background-image: url(/assets/images-pages/image1.jpg);
+    background-size: cover;
+    object-fit: cover;
+    flex-grow: 1;   
+}
+.form-container-contact{
+    padding: 1rem 1rem 0;    
+}
+.form-contact{
+background: linear-gradient(rgba(5, 7, 12, 0.75), rgba(5, 7, 12, 0.75));
+text-align: center;
+margin-top: 6rem;
+&__nav-input{
+color: $color-text-ligth;
+padding: 10px;
+font-size: 1.5rem;
+font-weight: bold;
+}
+box-shadow: 0px 1px 10px rgba(0,0,0,0.2);
+cursor: default;
+transition: all 400ms ease;
+&:hover{
+box-shadow: 5px 5px 20px rgba(0,0,0,0.4) ;
+}
+&__label{
+color: $color-text-ligth;
+padding: .5rem;
+}
+&__input{
+padding: .25rem;
+margin: .40rem 0;
+background-color: transparent;
+outline:1px solid $color-bg-secundary;
+border: none;
+border-radius: 4px;
+color: $color-text-ligth;
+}
+&__textarea{
+margin: .40rem 0;
+padding: .25rem;
+background-color: transparent;
+outline: 1px solid $color-bg-secundary ;
+border-radius: 4px;
+}
+&__footer-btn{
+color: $color-bg-primary;
+padding:1rem 0;
+}
+&__btn-contact{
+padding: 8px;
+color: $color-bg-secundary;
+border: 1px solid $color-bg-secundary;
+border-radius: 4px;
+transition: all 400ms ease;
+&:hover{
+background-color: $color-bg-secundary;
+color: $color-text-ligth;
+}
+}    
+}
+.iframe-container{
+text-align: center;
+margin-bottom: 2rem;
+&__nav-iframe{
+font-weight: bold;
+font-size: 1.5rem;
+}
+}
+
+
+@media screen and (min-width:600px){
+.form-container-contact{
+align-items: center;
+justify-content: center;
+}
+.form-contact{
+margin-bottom: 20px;
+&__main{
+padding:0 10px;
+}
+}
+
+.footer-contact{
+background-color: $color-bg-secundary;
+padding: 1rem;
+}
+
+.form-container-contact{
+display: flex;
+justify-content:space-evenly;
+margin-top: 3rem;   
+}
+.form-contact{
+&__nav-input{
+padding-left: 1rem;}
+&__input{
+padding-left: 1rem;
+}
+}
+.iframe-container{
+&__img{
+width: 400px;
+height: 285px;
+}
+}
+}
+
+.footer-contact{
+    display: grid;
+    display: flex;
+    flex-direction: column;
+    background-color: $color-bg-secundary;
+    padding: 10px;
+    position: relative;
+    &__logo-contact{
+    margin-left: 10px;
+    }
+    &__company-name-contact{
+    color:$color-text-ligth;
+    font-family: cursive;    
+    }
+    &__contact-item-contact{
+    list-style: none;
+    }
+    &__contact-link-contact{
+    color: $color-text-ligth;
+    padding: .25rem;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    }
+    &__contact-icon-contact{
+    font-size: 1rem ;
+    &--facebook-contact{
+        color: $color-text-ligth ;
+    }
+    &--instagram-about-contact{
+    color:$color-text-ligth ;
+    }
+    &--linkedln-contact{
+    color: $color-text-ligth ;
+    }
+    &--copyright-contact{
+    color:$color-text-ligth ;
+    font-size: .75rem;
+    position: absolute;
+    bottom: 15px;
+    right: 5px;
+    
+    }
+    }
+}
+    @media screen and (min-width: 600px) {
+    .footer-contact{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    position: relative;
+    overflow: hidden;
+    &__logo-contact{
+    margin-left: 13px;
+    }
+    &__contact-icon-contact{
+    &--copyright-contact{
+    font-size: 8px;
+    position: absolute;
+    bottom: 18px;
+    right: 12px;
+    }
+    }
+    }
+    }
