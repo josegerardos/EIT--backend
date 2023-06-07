@@ -12,10 +12,10 @@ router.get("/products",   productController.getAllProducts);
 router.delete("/products/:id", [ jwtVerify, isAdmin ] ,   productController.deleteProduct);
 
 // añadir producto:
- router.post("/product", [ jwtVerify, isAdmin ],  uploadController.uploadProduct,  productController.addProduct);
+router.post("/product", [ jwtVerify, isAdmin ],  uploadController.uploadProduct,  productController.addProduct);
 
 //  obtener un producto especifico:
-router.get("/product", productController.getProduct);
+router.get("/product/:id", productController.getProduct);
 
 // modificar producto:
 router.put("/products/:id", [ jwtVerify, isAdmin ],  productController.updateProduct);
