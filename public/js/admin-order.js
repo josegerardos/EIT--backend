@@ -1,7 +1,7 @@
 
 const token = localStorage.getItem('token')
 let orders = []
-const response = axios.get('http://localhost:4000/api/orders', {
+const response = axios.get('https://ecommerce-noqj.onrender.com/api/orders', {
   headers:{
     Authorization: token
   }
@@ -73,13 +73,13 @@ editButton.addEventListener('click',async (event) => {
   let data = {
     status:options[statusChange.selectedIndex]
   }
-  await axios.put('http://localhost:4000/api/orders/'+selectedOrder._id, data, {
+  await axios.put('https://ecommerce-noqj.onrender.com/api/orders/'+selectedOrder._id, data, {
     headers:{
       Authorization: token
     }
   } )
 
-  let respuesta = await axios('http://localhost:4000/api/orders', {
+  let respuesta = await axios('https://ecommerce-noqj.onrender.com/api/orders', {
     headers:{
       Authorization: token
     }

@@ -7,8 +7,8 @@ const tableBodyUser = document.getElementById('table-bodyUser');
 let users = [];
 let editIndex;
 let isEditing = false
-const URL = 'http://localhost:4000/api';
-const URL_public = 'http://localhost:4000';
+const URL = 'https://ecommerce-noqj.onrender.com/api';
+const URL_public = 'https://ecommerce-noqj.onrender.com';
 const token = localStorage.getItem('token');
 
 async function getUsers() {

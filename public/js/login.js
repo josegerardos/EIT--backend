@@ -1,7 +1,7 @@
 
 
 const loginForm = document.getElementById('loginForm');
-const URL = 'http://localhost:4000/api';
+const URL = 'https://ecommerce-noqj.onrender.com/api';
 
 loginForm.addEventListener('submit', async (event) => {
   event.preventDefault();

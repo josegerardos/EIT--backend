@@ -43,7 +43,7 @@ const registerForm = document.querySelector('#registerForm');
     }
     // users.push(user)
     // localStorage.setItem('users', JSON.stringify(users));
-    await axios.post('http://localhost:4000/api/users', user)
+    await axios.post('https://ecommerce-noqj.onrender.com/api/users', user)
     
     
     

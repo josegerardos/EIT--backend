@@ -108,7 +108,7 @@ addToCart(product)
 
 
 
-axios.get('http://localhost:4000/api/products').then((res) => {
+axios.get('https://ecommerce-noqj.onrender.com/api/products').then((res) => {
 productos = res.data.productos
 renderProducts(res.data.productos)
 })

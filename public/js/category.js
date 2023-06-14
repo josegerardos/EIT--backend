@@ -1,4 +1,4 @@
-const URL = 'http://localhost:4000/api'
+const URL = 'https://ecommerce-noqj.onrender.com/api'
 const selectCategoryHTML = document.getElementById('id del html donde tengo el select de categories')
 async function createCategory(res, res) {
 try{

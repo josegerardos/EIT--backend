@@ -4,13 +4,13 @@ const tableBody = document.getElementById("table-body");
 editIndex =[]
 let isEditing = false
 
-const URL = 'http://localhost:4000/api';
-const URL_public = 'http://localhost:4000';
+const URL = 'https://ecommerce-noqj.onrender.com/api';
+const URL_public = 'https://ecommerce-noqj.onrender.com';
 
 
 async function renderTable() {
   try {
-    const response = await axios.get('http://localhost:4000/api/products',)
+    const response = await axios.get('https://ecommerce-noqj.onrender.com/api/products',)
     
     const products = response.data.productos;
 
@@ -57,7 +57,7 @@ const token = localStorage.getItem('token');
 async function addProduct(evt) {
   console.log('isediting', isEditing)
   evt.preventDefault();
-  const response = await axios.get('http://localhost:4000/api/products');
+  const response = await axios.get('https://ecommerce-noqj.onrender.com/api/products');
     
     const products = response.data.productos;
   const elements = evt.target.elements;
@@ -72,7 +72,7 @@ data[input.id] = input.value
   data[textarea.id] = textarea.value
   try {
     if (isEditing) {
-      await axios.put(`http://localhost:4000/api/products/${products[editIndex]._id}`, data, { 
+      await axios.put(`https://ecommerce-noqj.onrender.com/api/products/${products[editIndex]._id}`, data, { 
         headers:{
           Authorization: token
         }
@@ -83,7 +83,7 @@ data[input.id] = input.value
               icon:'success'
           })
     } else {
-      await axios.post('http://localhost:4000/api/product', data, { 
+      await axios.post('https://ecommerce-noqj.onrender.com/api/product', data, { 
         headers:{
           Authorization: token
         }
@@ -117,7 +117,7 @@ data[input.id] = input.value
 
 
 async function deleteProduct(index) {
-  let {data} = await axios.get('http://localhost:4000/api/products')
+  let {data} = await axios.get('https://ecommerce-noqj.onrender.com/api/products')
   let products = data.productos;
   swal({
           title:`Borrar producto`,
@@ -131,7 +131,7 @@ async function deleteProduct(index) {
         if(value === 'delete' ) {
           try {
             
-            await axios.delete(`http://localhost:4000/api/products/${products[index]._id}`, { 
+            await axios.delete(`https://ecommerce-noqj.onrender.com/api/products/${products[index]._id}`, { 
               headers:{
                 Authorization: token
               }
@@ -155,7 +155,7 @@ async function deleteProduct(index) {
 
  async function editProduct(idx) {
   console.log('editproduct')
-  const response = await axios.get('http://localhost:4000/api/products');
+  const response = await axios.get('https://ecommerce-noqj.onrender.com/api/products');
     
     const products = response.data.productos;
   submitBtn.classList.add("edit-btn");

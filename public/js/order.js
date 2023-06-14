@@ -58,7 +58,7 @@ total += order.subtotal
 
 
 function getOrders() {
-  axios.get('http://localhost:4000/api/orders', {
+  axios.get('https://ecommerce-noqj.onrender.com/api/orders', {
     headers: {
       Authorization: localStorage.getItem('token') || ''
     }
@@ -82,7 +82,7 @@ paintTable(JSON.parse(localStorage.getItem('cart')))
 
  async function addToOrder(index) {
   console.log('add to order')
-  let response = await axios.get('http://localhost:4000/api/products')
+  let response = await axios.get('https://ecommerce-noqj.onrender.com/api/products')
   let products = response.data.productos
   const product = products[index]
   let shoppingCart = JSON.parse(localStorage.getItem('cart'))
@@ -164,7 +164,7 @@ return {productId:producto._id,
     total:total
   }
 
-  axios.post('http://localhost:4000/api/orders', data).then((res) => {
+  axios.post('https://ecommerce-noqj.onrender.com/api/orders', data).then((res) => {
 console.log(res)
 swal({
   title:`Su orden fue creada con exito`,
